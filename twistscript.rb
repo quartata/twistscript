@@ -1,7 +1,7 @@
-require "digest/md5";
+require "digest/sha2";
 
 $code = File.open(ARGV.pop).read();
-$seed = Digest::MD5.hexdigest($code).to_i(16);
+$seed = Digest::SHA2.new(512).hexdigest($code).to_i(16);
 $pipe = IO.pipe;
 $input = $stdin.read;
 $stdin.reopen($pipe[0]);
