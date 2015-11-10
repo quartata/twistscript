@@ -25,4 +25,4 @@ while not $code.empty?
 end
 
 $pipe[1].close;
-require_relative "golfscript"
+require_relative "golfscript";
